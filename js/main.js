@@ -7,10 +7,10 @@ async function getRandomJoke() {
   let jsData = await originalData.json();
   //   converting the json data to javascript object
   //   showing the data form the api result in the screen
-  document.getElementById("joke").innerHTML = `Joke:   ${jsData.setup}`;
+  document.getElementById("joke").innerHTML = `Joke:  ${jsData.setup}`;
   document.getElementById(
     "punchline"
-  ).innerHTML = `PunchLine:   ${jsData.punchline}`;
+  ).innerHTML = `PunchLine:  ${jsData.punchline}`;
 }
 // selecting the random joke button
 document.getElementById("btn").addEventListener("click", getRandomJoke);
