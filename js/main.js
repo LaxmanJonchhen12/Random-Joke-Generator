@@ -1,3 +1,5 @@
+let jokeElement = document.getElementById("joke");
+let punchLineElement = document.getElementById("punchline");
 // function to get random joke
 async function getRandomJoke() {
   let originalData = await fetch(
@@ -7,10 +9,8 @@ async function getRandomJoke() {
   let jsData = await originalData.json();
   //   converting the json data to javascript object
   //   showing the data form the api result in the screen
-  document.getElementById("joke").innerHTML = `Joke:  ${jsData.setup}`;
-  document.getElementById(
-    "punchline"
-  ).innerHTML = `PunchLine:  ${jsData.punchline}`;
+  jokeElement.innerHTML = `Joke:  ${jsData.setup}`;
+  punchLineElement.innerHTML = `PunchLine:  ${jsData.punchline}`;
 }
 // selecting the random joke button
 document.getElementById("btn").addEventListener("click", getRandomJoke);
